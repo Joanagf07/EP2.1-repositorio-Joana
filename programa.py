@@ -25,7 +25,7 @@ while i < 4:
             if i == 3:
                 orientacao = "vertical"
             else:
-                orientacao = int(input("Orientação (1 - vertical, 2 - horizontal): "))
+                orientacao = int(input("Orientação: [1] Vertical [2] Horizontal "))
 
                 if orientacao == 1:
                     orientacao = "vertical"
@@ -63,6 +63,7 @@ while jogando:
             print("Coluna inválida!")
             coluna = int(input("Jogador, qual coluna deseja atacar? "))
     tabuleiro_oponente = faz_jogada(tabuleiro_oponente, linha, coluna)
+    print(afundados(frota_oponente, tabuleiro_oponente))
     if afundados(frota_oponente, tabuleiro_oponente) >= 10:
         print(monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente))
         print("Parabéns! Você derrubou todos os navios do seu oponente!")
