@@ -41,3 +41,18 @@ def posiciona_frota(f):
             i = i+1
     return tabuleiro
 
+def afundados(f,t):
+    total = 0
+    for a in f:
+        i = 0
+        while i < len(f[a]):
+            j = 0
+            acertou = True
+            while j < len(f[a][i]):
+                if t[f[a][i][j][0]][f[a][i][j][1]] != "X":
+                    acertou = False
+                j = j+1
+            if acertou == True:
+                total = total+1
+            i = i+1
+    return total
