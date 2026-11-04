@@ -1,5 +1,5 @@
-
 from funcoes import *
+import random
 
 frota_oponente = {
     "porta-aviões": [[[9, 1], [9, 2], [9, 3], [9, 4]]],
@@ -110,4 +110,19 @@ while jogando:
     if afundados(frota_oponente, tabuleiro_oponente) == 10:
         print("Parabéns! Você derrubou todos os navios do seu oponente!")
         jogando = False
+    else:
+        linha_op = random.randint(0, 9)
+        coluna_op = random.randint(0, 9)
+
+        while tabuleiro_jogador[linha_op][coluna_op] == "X" or tabuleiro_jogador[linha_op][coluna_op] == "-":
+            linha_op = random.randint(0, 9)
+            coluna_op = random.randint(0, 9)
+
+        print("Seu oponente está atacando na linha " + str(linha_op) + " e coluna " + str(coluna_op))
+
+        tabuleiro_jogador = faz_jogada(tabuleiro_jogador, linha_op, coluna_op)
+
+        if afundados(frota, tabuleiro_jogador) == 10:
+            print("Xi! O oponente derrubou toda a sua frota =(")
+            jogando = False
 
