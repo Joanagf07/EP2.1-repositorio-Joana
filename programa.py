@@ -17,8 +17,7 @@ while i < len(nomes):
 
     while j < quantidades[i]:
 
-        print("Insira as informações referentes ao navio " + nomes[i] + " que possui tamanho " + str(tamanhos[i]) + "; A quantidade e o tamanho das embarcação são definidas pela tabela a seguir:")
-
+        print("Insira as informações referentes ao navio " + nomes[i] + " que possui tamanho " + str(tamanhos[i]))
         linha = int(input("Digite a linha: "))
         coluna = int(input("Digite a coluna: "))
 
