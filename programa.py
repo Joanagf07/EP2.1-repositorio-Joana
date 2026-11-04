@@ -17,35 +17,30 @@ while i < len(nomes):
 
     while j < quantidades[i]:
 
-        print("Insira as informações referentes ao navio " + nomes[i] + " que possui tamanho " + str(tamanhos[i]))
-        linha = int(input("Digite a linha: "))
-        coluna = int(input("Digite a coluna: "))
+        valido = False
 
-        if nomes[i] == "submarino":
-            orientacao = "vertical"
-        else:
-            orientacao = int(input("Digite a orientação (1 - vertical, 2 - horizontal): "))
+        while valido == False:
 
-            if orientacao == 1:
+            print("Insira as informações referentes ao navio " + nomes[i] + " que possui tamanho " + str(tamanhos[i]))
+
+            linha = int(input())
+            coluna = int(input())
+
+            if nomes[i] == "submarino":
                 orientacao = "vertical"
             else:
-                orientacao = "horizontal"
-
-        while posicao_valida(frota, linha, coluna, orientacao, tamanhos[i]) == False:
-            print("Esta posição não está válida!")
-
-            linha = int(input("Digite a linha: "))
-            coluna = int(input("Digite a coluna: "))
-
-            if nomes[i] != "submarino":
-                orientacao = int(input("Digite a orientação (1 - vertical, 2 - horizontal): "))
+                orientacao = int(input())
 
                 if orientacao == 1:
                     orientacao = "vertical"
                 else:
                     orientacao = "horizontal"
 
-        frota = preenche_frota(frota, nomes[i], linha, coluna, orientacao, tamanhos[i])
+            if posicao_valida(frota, linha, coluna, orientacao, tamanhos[i]):
+                frota = preenche_frota(frota, nomes[i], linha, coluna, orientacao, tamanhos[i])
+                valido = True
+            else:
+                print("Esta posição não está válida!")
 
         j = j+1
 
