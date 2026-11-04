@@ -56,3 +56,19 @@ def afundados(f,t):
                 total = total+1
             i = i+1
     return total
+
+def posicao_valida(f,l,c,o,t):
+    p = define_posicoes(l,c,o,t)
+    for a in p:
+        if a[0]<0 or a[0]>9 or a[1]<0 or a[1]>9:
+            return False
+    for a in f:
+        i = 0
+        while i < len(f[a]):
+            j = 0
+            while j < len(f[a][i]):
+                if f[a][i][j] in p:
+                    return False
+                j = j+1
+            i = i+1
+    return True
