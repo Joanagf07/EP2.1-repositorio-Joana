@@ -24,3 +24,20 @@ def faz_jogada(t,l,c):
     elif t[l][c]==1:
         t[l][c]="X"
     return t
+
+def posiciona_frota(f):
+    tabuleiro = []
+    i = 0
+    while i < 10:
+        tabuleiro.append([0]*10)
+        i = i+1
+    for a in f:
+        i = 0
+        while i < len(f[a]):
+            j = 0
+            while j < len(f[a][i]):
+                tabuleiro[f[a][i][j][0]][f[a][i][j][1]] = 1
+                j = j+1
+            i = i+1
+    return tabuleiro
+
