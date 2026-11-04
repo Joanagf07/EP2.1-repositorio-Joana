@@ -10,3 +10,10 @@ def define_posicoes(l,c,o,t):
         i = i+1
     return resultado
 
+def preenche_frota(f,n,l,c,o,t):
+    p = define_posicoes(l,c,o,t)
+    if n in f:
+        f[n].append(p)
+    else:
+        f[n] = [p]
+    return f
