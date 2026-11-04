@@ -63,8 +63,7 @@ while jogando:
             print("Coluna inválida!")
             coluna = int(input("Jogador, qual coluna deseja atacar? "))
     tabuleiro_oponente = faz_jogada(tabuleiro_oponente, linha, coluna)
-    print(afundados(frota_oponente, tabuleiro_oponente))
-    if afundados(frota_oponente, tabuleiro_oponente) >= 10:
+    if afundados(frota_oponente, tabuleiro_oponente) == 10:
         print(monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente))
         print("Parabéns! Você derrubou todos os navios do seu oponente!")
         jogando = False
