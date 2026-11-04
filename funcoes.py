@@ -17,3 +17,10 @@ def preenche_frota(f,n,l,c,o,t):
     else:
         f[n] = [p]
     return f
+
+def faz_jogada(t,l,c):
+    if t[l][c]==0:
+        t[l][c]="-"
+    elif t[l][c]==1:
+        t[l][c]="X"
+    return t
